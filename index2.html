@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <title>HOMEPAGE</title>
+</head>
+<div class="main">
+    <div class="navbar">
+        <h2 class="logo">Welcome</h2>
+    </div>
+    <div class="menu">
+        <ul>
+            <li><a href="#">HOME</a> </li>
+            <li><a href="#">ABOUT</a> </li>
+            <li><a href="#">EVENT</a> </li>
+            <li><a href="#">VLOGS</a> </li>
+            <li><a href="#">CONTACT</a> </li>
+        </ul>
+    </div>
+</div>
+<button class="tablink" onclick="openPage('Home', this, 'bg2')">Home</button>
+<button class="tablink" onclick="openPage('News', this, 'bg3')" id="defaultOpen">News</button>
+<button class="tablink" onclick="openPage('Contact', this, 'bg4')">Contact</button>
+<button class="tablink" onclick="openPage('About', this, 'bg1')">About</button>
+
+<div id="Home" class="tabcontent">
+<h3>Home</h3>
+<p>Home is where the heart is..</p>
+</div>
+
+<div id="News" class="tabcontent">
+<h3>News</h3>
+<p>Some news this fine day!</p> 
+</div>
+
+<div id="Contact" class="tabcontent">
+<h3>Contact</h3>
+<p>Get in touch, or swing by for a cup of coffee.</p>
+</div>
+
+<div id="About" class="tabcontent">
+<h3>About</h3>
+<p>Who we are and what we do.</p>
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+var i, tabcontent, tablinks;
+tabcontent = document.getElementsByClassName("tabcontent");
+for (i = 0; i < tabcontent.length; i++) {
+tabcontent[i].style.display = "none";
+}
+tablinks = document.getElementsByClassName("tablink");
+for (i = 0; i < tablinks.length; i++) {
+tablinks[i].style.backgroundColor = "";
+}
+document.getElementById(pageName).style.display = "block";
+elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+</body>
+</html>
